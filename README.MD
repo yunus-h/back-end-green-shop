@@ -1,0 +1,1 @@
+install : express mongoose dotenv morgan cors nodemon
