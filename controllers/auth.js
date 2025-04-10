@@ -20,9 +20,14 @@ router.post('/sign-up', async (req,res) => {
             role: req.body.role,
             username: req.body.username,
             hashedPassword: bcrypt.hashSync(req.body.password, saltRounds),
+            name: req.body.name,
             email: req.body.email,
+            address: req.body.address,
+            city: req.body.city,
+            state: req.body.state,
+            country: req.body.country,
+            zip: req.body.zip,
             phone: req.body.phone,
-            accCreationDate: new Date().toLocaleDateString()
         })
 
         //let's define our payload
@@ -30,9 +35,14 @@ router.post('/sign-up', async (req,res) => {
             _id: user._id,
             role: user.role,
             username: user.username,
+            name: user.name,
             email: user.email,
+            address: user.address,
+            city: user.address,
+            state: user.state,
+            country: user.country,
+            zip: user.zip,
             phone: user.phone,
-            accCreationDate: user.accCreationDate
         }
 
         // create the token based on the above payload
@@ -69,9 +79,14 @@ router.post('/sign-in', async (req, res) => {
             _id: user._id,
             role: user.role,
             username: user.username,
+            name: user.name,
             email: user.email,
+            address: user.address,
+            city: user.address,
+            state: user.state,
+            country: user.country,
+            zip: user.zip,
             phone: user.phone,
-            accCreationDate: user.accCreationDate
         }
 
         // create the token based on the above payload
