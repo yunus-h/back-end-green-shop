@@ -112,6 +112,8 @@ router.put("/:productId/reviews/:reviewId", verifyToken, async (req, res) => {
       }
   
       review.text = req.body.text;
+      review.rating = req.body.rating;
+    
       await product.save();
       res.status(200).json({ message: "review updated successfully" });
     } catch (err) {
